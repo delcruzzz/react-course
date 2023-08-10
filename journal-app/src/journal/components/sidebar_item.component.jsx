@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { setActiveNote } from '../../store/journal/slices/journal.slice'
 
-export const SidebarItem = ({ id, title, body, date, imgUrls = [] }) => {
+export const SidebarItem = ({ id, title = '', body, date, imgUrls = [] }) => {
   const newTitle = useMemo(() => {
     return title.length > 17
       ? title.substring(0, 17) + '...'
@@ -24,7 +24,7 @@ export const SidebarItem = ({ id, title, body, date, imgUrls = [] }) => {
           <TurnedInNot />
         </ListItemIcon>
         <Grid container>
-          <ListItemText primary={title} />
+          <ListItemText primary={newTitle} />
           <ListItemText secondary={body} />
         </Grid>
       </ListItemButton>
