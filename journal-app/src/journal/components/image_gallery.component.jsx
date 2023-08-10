@@ -1,5 +1,4 @@
 import { ImageList, ImageListItem } from '@mui/material'
-import { useSelector } from 'react-redux'
 
 export const ImageGallery = ({images}) => {
   return (
