@@ -15,6 +15,7 @@ import { fileUpload } from '../../../helpers/file_upload.helper'
 
 export const startNewNote = () => {
   return async (dispatch, getState) => {
+    dispatch(savingNote())
     // uid
     const { uid } = getState().auth
     
@@ -33,7 +34,6 @@ export const startNewNote = () => {
     dispatch(addNewEmptyNote(newNote))
     // dispatch para activar la nota
     dispatch(setActiveNote(newNote))
-    dispatch(savingNote())
   }
 }
 
