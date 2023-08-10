@@ -1,6 +1,6 @@
 import { SaveOutlined } from '@mui/icons-material'
 import { Button, Grid, TextField, Typography } from '@mui/material'
-import { ImageGallery } from '../components/image-gallery.component'
+import { ImageGallery } from '../components/image_gallery.component'
 
 export const NoteView = () => {
   return (
