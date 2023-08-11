@@ -30,6 +30,8 @@ export const startNewNote = () => {
     const newDoc = doc(collection(firebaseDB, `${uid}/journal/notes`))
     await setDoc(newDoc, newNote)
     
+    newNote.id = newDoc.id
+
     // dispatch de nueva nota
     dispatch(addNewEmptyNote(newNote))
     // dispatch para activar la nota

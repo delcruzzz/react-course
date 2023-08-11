@@ -19,7 +19,7 @@ export const journalSlice = createSlice({
       state.active = action.payload
     }, 
     setNotes: (state, action) => {
-      state.notes = [...action.payload]
+      state.notes = [...action.payload].sort()
     }, 
     setSaving: (state) => {
       state.isSaving = true
