@@ -26,7 +26,10 @@ export const startNewNote = () => {
       date: new Date().getTime(), 
     }
 
-    /* hacer referiencia al documento (la colección donde se va a insertar) para guardar en firebase */
+    /* 
+      hacer referiencia al documento (la colección donde se va a insertar) 
+      para guardar en firebase 
+    */
     const newDoc = doc(collection(firebaseDB, `${uid}/journal/notes`))
     await setDoc(newDoc, newNote)
     
