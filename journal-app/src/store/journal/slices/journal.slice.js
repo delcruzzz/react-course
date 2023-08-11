@@ -5,6 +5,8 @@ const initialState = {
   messageSaved: '', 
   notes: [], 
   active: null, 
+  users: [], 
+  isLoading: false, 
 }
 
 export const journalSlice = createSlice({
@@ -53,6 +55,12 @@ export const journalSlice = createSlice({
     savingNote: (state) => {
       state.isSaving = true
     }, 
+    setUsers: (state, action) => {
+      state.users = [...action.payload]
+    }, 
+    startLoading: (state, action) => {
+      state.isLoading = action.payload
+    }, 
   }
 })
 
@@ -66,4 +74,6 @@ export const {
   savingNote, 
   setPhotosToActiveNote, 
   clearNotes, 
+  setUsers, 
+  startLoading, 
 } = journalSlice.actions

@@ -1,5 +1,5 @@
 import { LogoutOutlined, MenuOutlined } from '@mui/icons-material'
-import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material'
+import { AppBar, Grid, IconButton, Link, Toolbar, Typography } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { logoutFirebase } from '../../firebase/providers.firebase'
 
@@ -33,6 +33,9 @@ export const Navbar = ({ drawerWidth = 240 }) => {
           alignItems='center'
         >
           <Typography variant='h6' noWrap component='div'>JournalApp</Typography>
+          <Link href='test' color='inherit'>
+            test page
+          </Link>
           <IconButton onClick={onLogout} color='error'>
             <LogoutOutlined />
           </IconButton>

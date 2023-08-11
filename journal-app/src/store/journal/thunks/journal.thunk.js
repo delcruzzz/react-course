@@ -8,10 +8,13 @@ import {
   setNotes, 
   setPhotosToActiveNote, 
   setSaving, 
+  setUsers, 
+  startLoading, 
   updateNote 
 } from '../slices/journal.slice'
 import { loadNotes } from '../../../helpers/load_notes.helper'
 import { fileUpload } from '../../../helpers/file_upload.helper'
+import axios from 'axios'
 
 export const startNewNote = () => {
   return async (dispatch, getState) => {
@@ -88,5 +91,21 @@ export const startDeletingNote = () => {
     await deleteDoc(docRef)
 
     dispatch(deleteNoteById(active.id))
+  }
+}
+
+export const fetchUsers = () => {
+  return async (dispatch) => {
+    dispatch(startLoading(true))
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users')
+      const users = response.data
+      dispatch(setUsers(users))
+      return response
+    } catch (error) {
+      console.error(error)
+    } finally {
+      dispatch(startLoading(false))
+    }
   }
 }
