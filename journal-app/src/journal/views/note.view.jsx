@@ -1,5 +1,11 @@
 import { DeleteOutline, SaveOutlined, UploadOutlined } from '@mui/icons-material'
-import { Button, Grid, IconButton, TextField, Typography } from '@mui/material'
+import { 
+  Button, 
+  Grid, 
+  IconButton, 
+  TextField, 
+  Typography, 
+} from '@mui/material'
 import { ImageGallery } from '../components/image_gallery.component'
 import { useForm } from './../../hooks/use_form.hook'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,6 +13,8 @@ import { useEffect, useMemo, useRef } from 'react'
 import { startDeletingNote, startSaveNote, startUploadingFiles } from '../../store/journal/thunks/journal.thunk'
 import { setActiveNote } from '../../store/journal/slices/journal.slice'
 import Swal from 'sweetalert2'
+import { ListUsers } from '../components/list_users.component'
+import { SelectState } from '../components/select_state.component'
 
 export const NoteView = () => {
   const dispatch = useDispatch()
@@ -111,6 +119,14 @@ export const NoteView = () => {
           <DeleteOutline />
         </Button>
       </Grid>
+
+      {/* seleccionar estado de la nota */}
+      <Grid item xs={4}>
+        <SelectState />
+      </Grid>
+
+      {/* seleccionar usuarios para dirigir la nota */}
+      <ListUsers />
 
       {/* images gallery */}
       <ImageGallery images={active.imgUrls} />

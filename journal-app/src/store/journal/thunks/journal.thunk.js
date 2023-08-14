@@ -27,6 +27,7 @@ export const startNewNote = () => {
       title: '', 
       body: '', 
       date: new Date().getTime(), 
+      state: 0, 
     }
 
     /* 
