@@ -7,45 +7,46 @@ import {
   ListItemIcon, 
   ListItemText 
 } from '@mui/material'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUsers } from '../../store/journal/thunks/journal.thunk'
-import CommentIcon from '@mui/icons-material/Comment'
+import PersonIcon from '@mui/icons-material/Person'
+import { setUsersSelectedToActivateNote } from '../../store/journal/slices/journal.slice'
+import { useForm } from '../../hooks/use_form.hook'
 
 export const ListUsers = () => {
   const dispatch = useDispatch()
-  const { users } = useSelector((state) => state.journal)
+  const { active, users } = useSelector((state) => state.journal)
+  const { usersSelected, onInputChange } = useForm(active)
 
   useEffect(() => {
     dispatch(fetchUsers())
   }, [dispatch])
 
-  const [checked, setChecked] = useState([0])
-
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value)
-    const newChecked = [...checked]
+  const handleToggle = (id) => () => {
+    const currentIndex = active.usersSelected.indexOf(id)
+    const newUsersChecked = [...active.usersSelected]
 
     if (currentIndex === -1) {
-      newChecked.push(value)
+      newUsersChecked.push(id)
     } else {
-      newChecked.splice(currentIndex, 1)
+      newUsersChecked.splice(currentIndex, 1)
     }
 
-    setChecked(newChecked)
+    dispatch(setUsersSelectedToActivateNote(newUsersChecked))
   }
 
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {users.map((user, i) => {
-        const labelId = `checkbox-list-label-${user}`;
+    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+      {users.map((user) => {
+        const labelId = `checkbox-list-label-${user.id}`
 
         return (
           <ListItem
-            key={i}
+            key={user.id}
             secondaryAction={
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
+              <IconButton edge='end' aria-label='comments'>
+                <PersonIcon />
               </IconButton>
             }
             disablePadding
@@ -53,8 +54,9 @@ export const ListUsers = () => {
             <ListItemButton role={undefined} onClick={handleToggle(user.id)} dense>
               <ListItemIcon>
                 <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(user.id) !== -1}
+                  edge='start'
+                  onChange={onInputChange}
+                  checked={usersSelected.indexOf(user.id) !== -1}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
@@ -63,7 +65,7 @@ export const ListUsers = () => {
               <ListItemText id={labelId} primary={`${user.name}`} />
             </ListItemButton>
           </ListItem>
-        );
+        )
       })}
     </List>
   )

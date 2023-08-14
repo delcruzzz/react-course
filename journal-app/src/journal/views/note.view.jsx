@@ -65,7 +65,7 @@ export const NoteView = () => {
           {dateString}
         </Typography>
       </Grid>
-      <Grid item>
+      <Grid item sx={{ my: 2 }}>
         <input 
           type='file' 
           multiple 
@@ -73,14 +73,16 @@ export const NoteView = () => {
           onChange={onFileInputChange} 
           style={{ display: 'none' }} 
         />
-        <IconButton 
+        <Button 
           color='primary' 
           disabled={isSaving} 
           onClick={() => fileInputRef.current.click()}
+          sx={{ mr: 2, py: 1, px: 2 }}
         >
           <UploadOutlined />
-        </IconButton>
-        <Button disabled={isSaving} onClick={onSaveNote} sx={{ p: 2 }}>
+          <Typography sx={{ pl: 2 }}>subir imágenes</Typography>
+        </Button>
+        <Button disabled={isSaving} onClick={onSaveNote} sx={{ py: 1, px: 2 }}>
           <SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
           guardar
         </Button>
@@ -104,7 +106,7 @@ export const NoteView = () => {
           multiline 
           placeholder='¿qué sucedió hoy?' 
           minRows={5} 
-          name='body'
+          name='body' 
           value={body} 
           onChange={onInputChange} 
         />
@@ -112,21 +114,24 @@ export const NoteView = () => {
 
       <Grid container justifyContent='end'>
         <Button
-          sx={{ mt: 2 }}
+          sx={{ my: 2, py: 1, px: 2 }}
           color='error'
           onClick={onDelete}
         >
           <DeleteOutline />
+          <Typography sx={{ pl: 2 }}>eliminar nota</Typography>
         </Button>
       </Grid>
 
-      {/* seleccionar estado de la nota */}
-      <Grid item xs={4}>
+      <Grid container>
+        {/* seleccionar estado de la nota */}
         <SelectState />
       </Grid>
 
-      {/* seleccionar usuarios para dirigir la nota */}
-      <ListUsers />
+      <Grid container>
+        {/* seleccionar usuarios para dirigir la nota */}
+        <ListUsers />
+      </Grid>
 
       {/* images gallery */}
       <ImageGallery images={active.imgUrls} />

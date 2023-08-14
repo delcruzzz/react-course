@@ -62,7 +62,7 @@ export const journalSlice = createSlice({
       state.isLoading = action.payload
     }, 
     setUsersSelectedToActivateNote: (state, action) => {
-      state.active.usersSelected = [...state.active.usersSelected, ...action.payload]
+      state.active.usersSelected = [...action.payload]
     }, 
   }
 })
