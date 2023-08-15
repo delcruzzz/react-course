@@ -16,7 +16,7 @@ export const SelectState = () => {
         value={state < 3 ? state : 0}
         onChange={onInputChange}
       >
-        {!!stateValidate.states && stateValidate.states.map((state, i) => (
+        {stateValidate.states.map((state, i) => (
           <MenuItem key={i} value={state.id}>
             {state.description}
           </MenuItem>

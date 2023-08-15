@@ -17,7 +17,6 @@ import { useForm } from '../../hooks/use_form.hook'
 export const ListUsers = () => {
   const dispatch = useDispatch()
   const { active, users } = useSelector((state) => state.journal)
-  const { usersSelected, onInputChange } = useForm(active)
 
   useEffect(() => {
     dispatch(fetchUsers())
@@ -55,8 +54,8 @@ export const ListUsers = () => {
               <ListItemIcon>
                 <Checkbox
                   edge='start'
-                  onChange={onInputChange}
-                  checked={usersSelected.indexOf(user.id) !== -1}
+                  /* onChange={onInputChange} */
+                  checked={active.usersSelected.indexOf(user.id) !== -1}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}

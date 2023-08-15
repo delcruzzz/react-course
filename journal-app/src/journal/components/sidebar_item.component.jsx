@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { setActiveNote } from '../../store/journal/slices/journal.slice'
 
-export const SidebarItem = ({ id, title = '', body, date, imgUrls = [], enabled, usersSelected = [] }) => {
+export const SidebarItem = ({ id, title = '', body, date, imgUrls = [], state, usersSelected = [] }) => {
   const newTitle = useMemo(() => {
     return title.length > 17
       ? title.substring(0, 17) + '...'
@@ -14,7 +14,7 @@ export const SidebarItem = ({ id, title = '', body, date, imgUrls = [], enabled,
 
   /* activar nota al seleccionarla */
   const onSelectedItem = () => {
-    dispatch(setActiveNote({id, title, body, date, imgUrls, usersSelected, enabled}))
+    dispatch(setActiveNote({id, title, body, date, imgUrls, state, usersSelected}))
   }
 
   return (

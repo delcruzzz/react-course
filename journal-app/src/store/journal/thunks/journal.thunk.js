@@ -44,6 +44,7 @@ export const startNewNote = () => {
     dispatch(addNewEmptyNote(newNote))
     // dispatch para activar la nota
     dispatch(setActiveNote(newNote))
+    console.log(newNote.state)
   }
 }
 
@@ -68,6 +69,7 @@ export const startSaveNote = () => {
     const docRef = doc(firebaseDB, `${uid}/journal/notes/${active.id}`)
     await setDoc(docRef, noteToFireStore, {merge: true})
     dispatch(updateNote(active))
+    console.log(active)
   }
 }
 
