@@ -2,7 +2,6 @@ import { DeleteOutline, SaveOutlined, UploadOutlined } from '@mui/icons-material
 import { 
   Button, 
   Grid, 
-  IconButton, 
   TextField, 
   Typography, 
 } from '@mui/material'
@@ -10,11 +9,12 @@ import { ImageGallery } from '../components/image_gallery.component'
 import { useForm } from './../../hooks/use_form.hook'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useMemo, useRef } from 'react'
-import { startDeletingNote, startSaveNote, startUploadingFiles } from '../../store/journal/thunks/journal.thunk'
-import { setActiveNote } from '../../store/journal/slices/journal.slice'
+import { startSaveNote, startUploadingFiles } from '../../store/journal/thunks/journal.thunk'
+import { setActiveNote, setAlertOpen } from '../../store/journal/slices/journal.slice'
 import Swal from 'sweetalert2'
 import { ListUsers } from '../components/list_users.component'
 import { SelectState } from '../components/select_state.component'
+import { AlertDeleteNote } from '../components/alert_delete_note.component'
 
 export const NoteView = () => {
   const dispatch = useDispatch()
@@ -48,8 +48,8 @@ export const NoteView = () => {
     dispatch(startUploadingFiles(target.files))
   }
 
-  const onDelete = () => {
-    dispatch(startDeletingNote())
+  const handleOpenAlertDelete = () => {
+    dispatch(setAlertOpen(true))
   }
   
   return (
@@ -116,11 +116,12 @@ export const NoteView = () => {
         <Button
           sx={{ my: 2, py: 1, px: 2 }}
           color='error'
-          onClick={onDelete}
+          onClick={handleOpenAlertDelete}
         >
           <DeleteOutline />
           <Typography sx={{ pl: 2 }}>eliminar nota</Typography>
         </Button>
+        <AlertDeleteNote />
       </Grid>
 
       <Grid container>
@@ -129,6 +130,7 @@ export const NoteView = () => {
       </Grid>
 
       <Grid container>
+        <Typography variant='h6' sx={{ py: 2 }}>Etiqueta a alguien</Typography>
         {/* seleccionar usuarios para dirigir la nota */}
         <ListUsers />
       </Grid>

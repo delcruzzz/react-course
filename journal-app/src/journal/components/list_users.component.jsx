@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchUsers } from '../../store/journal/thunks/journal.thunk'
 import PersonIcon from '@mui/icons-material/Person'
 import { setUsersSelectedToActivateNote } from '../../store/journal/slices/journal.slice'
-import { useForm } from '../../hooks/use_form.hook'
 
 export const ListUsers = () => {
   const dispatch = useDispatch()
