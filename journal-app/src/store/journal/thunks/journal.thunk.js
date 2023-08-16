@@ -8,6 +8,7 @@ import {
   setNotes, 
   setPhotosToActiveNote, 
   setSaving, 
+  setTodos, 
   setUsers, 
   startLoading, 
   updateNote 
@@ -108,6 +109,22 @@ export const fetchUsers = () => {
       return response
     } catch (error) {
       console.error(error)
+    } finally {
+      dispatch(startLoading(false))
+    }
+  }
+}
+
+export const fetchTodos = () => {
+  return async (dispatch) => {
+    dispatch(startLoading(true))
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/todos')
+      const todos = response.data
+      dispatch(setTodos(todos))
+      return response
+    } catch (error) {
+      console.log(error)
     } finally {
       dispatch(startLoading(false))
     }
