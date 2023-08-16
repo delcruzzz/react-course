@@ -30,15 +30,15 @@ export const AlertDeleteNote = () => {
       aria-describedby='alert-dialog-description'
     >
       <DialogTitle id='alert-dialog-title'>
-        {'¿Seguro de eliminar esta nota?'}
+        {'¿seguro de eliminar esta nota?'}
       </DialogTitle>
       <DialogContent>
-        Si la eliminas no la podras volver a recuperar
+        si la eliminas no la podras volver a recuperar, ¿estás seguro de eliminar esta nota?
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleCloseAlertDelete}>No</Button>
+        <Button onClick={handleCloseAlertDelete}>no borrar</Button>
         <Button onClick={onDelete} autoFocus>
-          Seguro
+          seguro
         </Button>
       </DialogActions>
     </Dialog>

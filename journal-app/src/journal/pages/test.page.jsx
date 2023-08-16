@@ -5,7 +5,7 @@ import { TableUsers } from '../components/table_users.component'
 export const TestPage = () => {
   return (
     <JournalLayout>
-      <Typography>hello</Typography>
+      <Typography variant='h4' noWrap component='div'>Users</Typography>
       <TableUsers />
     </JournalLayout>
   )

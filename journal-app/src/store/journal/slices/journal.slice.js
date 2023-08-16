@@ -64,6 +64,7 @@ export const journalSlice = createSlice({
     }, 
     setUsersSelectedToActivateNote: (state, action) => {
       state.active.usersSelected = [...action.payload]
+      state.isSaving = false
     }, 
     setAlertOpen: (state, action) => {
       state.isAlertOpen = action.payload

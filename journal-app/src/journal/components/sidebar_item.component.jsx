@@ -10,6 +10,11 @@ export const SidebarItem = ({ id, title = '', body, date, imgUrls = [], state, u
       ? title.substring(0, 17) + '...'
       : title
   }, [title])
+  const newBody = useMemo(() => {
+    return body.length > 17
+      ? body.substring(0, 17) + '...'
+      : body
+  }, [body])
   const dispatch = useDispatch()
 
   /* activar nota al seleccionarla */
@@ -25,7 +30,7 @@ export const SidebarItem = ({ id, title = '', body, date, imgUrls = [], state, u
         </ListItemIcon>
         <Grid container>
           <ListItemText primary={newTitle} />
-          <ListItemText secondary={body} />
+          <ListItemText secondary={newBody} />
         </Grid>
       </ListItemButton>
     </ListItem>

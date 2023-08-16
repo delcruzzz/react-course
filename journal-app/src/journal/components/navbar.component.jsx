@@ -32,9 +32,11 @@ export const Navbar = ({ drawerWidth = 240 }) => {
           justifyContent='space-between' 
           alignItems='center'
         >
-          <Typography variant='h6' noWrap component='div'>JournalApp</Typography>
-          <Link href='test' color='inherit'>
-            test page
+          <Link href='/'  color='inherit' sx={{ textDecoration: 'none' }}>
+            <Typography variant='h6' noWrap component='div'>JournalApp</Typography>
+          </Link>
+          <Link href='test' color='inherit' sx={{ textDecoration: 'none' }}>
+            <Typography variant='h6' noWrap component='div'>Users test</Typography>
           </Link>
           <IconButton onClick={onLogout} color='error'>
             <LogoutOutlined />
