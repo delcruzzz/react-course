@@ -60,7 +60,7 @@ export const ListUsers = () => {
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`${user.name}`} />
+              <ListItemText id={labelId} primary={`${user.username}`} />
             </ListItemButton>
           </ListItem>
         )
