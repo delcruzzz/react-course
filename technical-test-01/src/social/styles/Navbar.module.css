@@ -1,0 +1,45 @@
+.navbarHeader {
+  width: 100%;
+  z-index: 30;
+  top: 0;
+  position: sticky;
+}
+
+.containerNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+}
+
+.brandSection {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 2rem; 
+}
+
+.navigationSection {
+  display: none; 
+  margin-left: 9rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.linkNavigation {
+  padding: 0 0 0 4rem;
+}
+
+@media (min-width: 768px) {
+  .containerNavbar {
+    padding: .5rem 3rem;
+  }
+
+  .navigationSection {
+    display: flex;
+  }
+}
