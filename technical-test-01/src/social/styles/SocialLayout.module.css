@@ -1,0 +1,11 @@
+.socialMain {
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 80rem;
+}
+
+@media (min-width: 768px) {
+  .socialMain {
+    padding: 0 3rem;
+  }
+}
