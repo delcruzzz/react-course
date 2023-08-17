@@ -1,0 +1,65 @@
+.cardPost {
+  background-color: #f3f3f3;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+  width: 750px;
+}
+
+.headerPost {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.headerPost > img {
+  border-radius: 50px;
+  margin: 0 20px 0 0;
+  width: 50px;
+}
+
+.headerPost p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.headerPost small {
+  color: gray;
+}
+
+.mainPost {
+  display: flex;
+}
+
+.mainPost section > img {
+  margin: 20px 30px 0 0;
+  border-radius: .5rem;
+}
+
+.mainPost section > p {
+  margin: 20px 0 0 0;
+}
+
+.tagsBox {
+  margin: 1rem 0;
+}
+
+.tagsBox > span {
+  background-color: cornflowerblue;
+  border-radius: 14px;
+  margin: 0 16px 0 0;
+  padding: 8px 10px;
+}
+
+.likesBox {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 30px 0 0;
+}
+
+.likeIcon {
+  width: 25px;
+  margin: 0 10px 0 0;
+}

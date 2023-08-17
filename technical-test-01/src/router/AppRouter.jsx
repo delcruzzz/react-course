@@ -5,6 +5,7 @@ export const AppRouter = () => {
   return (
     <Routes>
       <Route path='/social/*' element={<SocialRoutes />} />
+      <Route path='/*' element={<SocialRoutes />} />
     </Routes>
   )
 }

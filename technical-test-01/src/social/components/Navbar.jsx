@@ -6,11 +6,11 @@ export const Navbar = () => {
     <header className={style.navbarHeader}>
       <div className={style.containerNavbar}>
         <section className={style.brandSection}>
-          <Link to='/'>delcruz</Link>
+          <Link to='/'>social app</Link>
         </section>
         <nav className={style.navigationSection}>
           <Link to='/' className={style.linkNavigation}>home</Link>
-          <Link to='/' className={style.linkNavigation}>posts</Link>
+          <Link to='/posts' className={style.linkNavigation}>posts</Link>
         </nav> 
       </div>
     </header>

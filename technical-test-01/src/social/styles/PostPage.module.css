@@ -1,0 +1,5 @@
+.containerPosts {
+  padding: 1rem 4rem;
+  display: grid;
+  place-items: center;
+}
