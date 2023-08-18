@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { SocialPage } from '../pages/SocialPage'
-import { PostsPage } from './../pages/PostsPage';
+import { PostsPage } from './../pages/PostsPage'
 
 export const SocialRoutes = () => {
   return (

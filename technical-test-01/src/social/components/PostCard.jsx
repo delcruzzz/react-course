@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import style from '../styles/PostCard.module.css'
-import { LikeIcon } from './../icons/Like';
+import { LikeIcon } from './../icons/Like'
 
 export const PostCard = ({ profile, firstName, lastName, prefix, image, text, publishDate, tags, likes }) => {
   const formatDate = useMemo(() => {
