@@ -16,7 +16,7 @@ export const PostsPage = () => {
 
   return (
     <SocialLayout>
-      <section>
+      <section className={style.containerTagsBar}>
         <TagsBar />
       </section>
       <div className={style.containerPosts}>

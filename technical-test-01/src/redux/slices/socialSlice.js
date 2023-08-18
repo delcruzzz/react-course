@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  posts: [],
   isLoading: false,
+  posts: [],
+  tags: [],
 }
 
 export const socialSlice = createSlice({
@@ -15,10 +16,14 @@ export const socialSlice = createSlice({
     setPosts: (state, action) => {
       state.posts = action.payload
     },
+    setTags: (state, action) => {
+      state.tags = action.payload
+    },
   }
 })
 
 export const {
   setLoading,
   setPosts,
+  setTags,
 } = socialSlice.actions
