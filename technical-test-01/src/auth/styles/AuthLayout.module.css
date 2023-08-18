@@ -1,0 +1,13 @@
+.authMain {
+  display: grid;
+  min-height: 100vh;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .authMain {
+    display: grid;
+    min-height: 100vh;
+    width: 100%;
+  }
+}

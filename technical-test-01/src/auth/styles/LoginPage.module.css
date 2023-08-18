@@ -1,0 +1,42 @@
+.containerLogin {
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  padding: 15px 30px;
+  place-self: center;
+}
+
+.containerLogin h4 {
+  font-size: 2rem;
+}
+
+.formContent {
+  margin: 10px 0;
+}
+
+.formContent > input {
+  border: #33333388 solid;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.boxButtons {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.boxButtons > button {
+  background-color: cornflowerblue;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.boxButtons > button:disabled {
+  background-color: gray;
+}
