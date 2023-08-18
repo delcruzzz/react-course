@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { AuthStatus } from './../../auth/constants/index';
+import { createSlice } from '@reduxjs/toolkit'
+import { AuthStatus } from './../../auth/constants/index'
 
 const initialState = {
   status: AuthStatus.CHECKING,

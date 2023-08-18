@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo } from 'react'
 import style from '../styles/PostCard.module.css'
 import { LikeIcon } from './../icons/Like'
 
